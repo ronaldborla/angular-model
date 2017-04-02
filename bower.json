@@ -1,0 +1,29 @@
+{
+  "name": "angular-model",
+  "homepage": "https://github.com/ronaldborla/angular-model",
+  "description": "AngularJS Module for Model",
+  "main": "dist/angular-model.js",
+  "moduleType": [],
+  "keywords": [
+    "angularjs",
+    "model",
+    "modeljs",
+    "ronaldborla",
+    "borla"
+  ],
+  "authors": [
+    "Ronald Borla"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "modeljs": "development"
+  }
+}
