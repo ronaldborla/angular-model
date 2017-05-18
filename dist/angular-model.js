@@ -46,7 +46,7 @@
     var provider = this;
 
     this.$get   = ModelFactory;
-    this.define = define;
+    this.define = defineModel;
     this.Model  = createBaseModel();
 
     ////////
@@ -63,7 +63,7 @@
     /**
      * Create base Model
      */
-    function createBaseModel(options) {
+    function createBaseModel() {
       return window.Model({
 
       }, function(construct) {
@@ -81,9 +81,9 @@
     }
 
     /**
-     * Define
+     * Define Model
      */
-    function define(modelProvider, options) {
+    function defineModel(modelProvider, options) {
       modelProvider.$get = modelFactory;
       modelProvider.Model = inheritModel();
 
@@ -153,7 +153,7 @@
     }
 
     /**
-     * Define
+     * Define Collection
      */
     function defineCollection(collectionProvider, options) {
       collectionProvider.$get       = collectionFactory;

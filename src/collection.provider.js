@@ -34,7 +34,7 @@
     }
 
     /**
-     * Define
+     * Define Collection
      */
     function defineCollection(collectionProvider, options) {
       collectionProvider.$get       = collectionFactory;
