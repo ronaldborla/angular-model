@@ -6,11 +6,11 @@
 
   angular
     .module('model')
-    .provider('Collection', CollectionProvider);
+    .provider('collection', collectionProvider);
 
-  CollectionProvider.$inject = ['$injector'];
+  collectionProvider.$inject = ['$injector'];
 
-  function CollectionProvider($injector) {
+  function collectionProvider($injector) {
     var provider  = this;
     var base = {
       methods:  {},
@@ -36,9 +36,9 @@
     /**
      * Define Collection
      */
-    function defineCollection(collectionProvider, options) {
-      collectionProvider.$get       = collectionFactory;
-      collectionProvider.Collection = createCollection();
+    function defineCollection(childProvider, options) {
+      childProvider.$get        = collectionFactory;
+      childProvider.Collection  = createCollection();
 
       ////////
 
@@ -64,7 +64,7 @@
       }
 
       function collectionFactory() {
-        return collectionProvider.Collection;
+        return childProvider.Collection;
       } 
     }
 

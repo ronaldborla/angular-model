@@ -6,11 +6,11 @@
 
   angular
     .module('model')
-    .provider('Model', ModelProvider);
+    .provider('model', modelProvider);
 
-  ModelProvider.$inject = ['$injector'];
+  modelProvider.$inject = ['$injector'];
 
-  function ModelProvider($injector) {
+  function modelProvider($injector) {
     var provider = this;
 
     this.$get   = ModelFactory;
@@ -51,9 +51,9 @@
     /**
      * Define Model
      */
-    function defineModel(modelProvider, options) {
-      modelProvider.$get = modelFactory;
-      modelProvider.Model = inheritModel();
+    function defineModel(childProvider, options) {
+      childProvider.$get = modelFactory;
+      childProvider.Model = inheritModel();
 
       ////////
 
@@ -80,7 +80,7 @@
       }
 
       function modelFactory() {
-        return modelProvider.Model;
+        return childProvider.Model;
       } 
     }
   }
